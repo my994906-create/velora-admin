@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4f0">
+  <meta name="description" content="Velora Flowers bağımsız yönetim paneli">
+  <title>Velora Studio — Yönetim Paneli</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="admin.css">
+  <script type="module" src="admin.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">v.</span><span>velora <small>studio</small></span></a>
+    <span class="topbar-caption">MAĞAZA YÖNETİMİ</span>
+    <span class="store-link">BAĞIMSIZ PANEL</span>
+  </header>
+  <main class="main">
+    <div id="notice" class="notice" role="status" hidden></div>
+    <section id="login-panel" class="login-card" hidden>
+      <div class="login-mark">v.</div>
+      <p class="eyebrow">VELORA STUDIO</p>
+      <h1>Panelinize giriş yapın.</h1>
+      <p class="muted">Bu ayrı yönetim sitesi yalnızca yetkili mağaza hesaplarına açıktır.</p>
+      <form id="login-form">
+        <label>E-posta<input name="email" type="email" autocomplete="username" required></label>
+        <label>Şifre<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="button primary" type="submit">Giriş yap</button>
+      </form>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="welcome">
+        <div><p class="eyebrow">VELORA FLOWERS</p><h1>Mağaza yönetimi</h1><p class="muted">Ürünlerinizi, siparişlerinizi ve müşteri yorumlarını yönetin.</p></div>
+        <button id="sign-out" class="button secondary" type="button">Oturumu kapat</button>
+      </div>
+      <nav class="tabs" aria-label="Yönetim bölümleri">
+        <button class="tab active" data-tab="products" type="button">Çiçekler</button>
+        <button class="tab" data-tab="orders" type="button">Siparişler</button>
+        <button class="tab" data-tab="reviews" type="button">Yorumlar</button>
+      </nav>
+      <section id="products-view" class="view">
+        <div class="view-title"><div><p class="eyebrow">ÜRÜN KATALOĞU</p><h2>Çiçekler</h2></div><button id="add-product" class="button primary" type="button">＋ Yeni çiçek</button></div>
+        <form id="product-form" class="editor" hidden>
+          <input name="id" type="hidden">
+          <div class="fields">
+            <label>Çiçek adı<input name="name" maxlength="120" required></label>
+            <label>Fiyat (₺)<input name="price" type="number" min="0.01" step="0.01" required></label>
+            <label>Kategori<select name="category" required><option value="bukeler">Bukeler</option><option value="guller">Güller</option><option value="orkideler">Orkideler</option><option value="bitkiler">Bitkiler</option><option value="hediyeler">Hediyeler</option></select></label>
+            <label>Stok<input name="stock" type="number" min="0" step="1" required></label>
+            <label class="wide">Görsel URL<input name="image_url" type="url" placeholder="https://..."></label>
+            <label class="wide">Açıklama<textarea name="description" rows="4" maxlength="3000" required></textarea></label>
+          </div>
+          <label class="check"><input name="active" type="checkbox"> Mağazada yayımla</label>
+          <div class="actions"><button class="button primary" type="submit">Kaydet</button><button id="cancel-edit" class="button secondary" type="button">Vazgeç</button></div>
+        </form>
+        <div id="products-list" class="table-wrap"></div>
+      </section>
+      <section id="orders-view" class="view" hidden><div class="view-title"><div><p class="eyebrow">SİPARİŞ TAKİBİ</p><h2>Siparişler</h2></div></div><div id="orders-list" class="table-wrap"></div></section>
+      <section id="reviews-view" class="view" hidden><div class="view-title"><div><p class="eyebrow">MÜŞTERİ DENEYİMİ</p><h2>Yorumlar</h2></div></div><div id="reviews-list" class="table-wrap"></div></section>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+:root{--paper:#f5f4f0;--white:#fff;--ink:#232721;--muted:#777d73;--green:#334b39;--line:#e3e3da;--red:#a44836;--sans:"DM Sans",sans-serif;--serif:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+.topbar{height:72px;padding:0 max(24px,calc((100vw - 1160px)/2));display:flex;align-items:center;justify-content:space-between;background:var(--white);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:700;letter-spacing:-.4px}
+.brand small{font-weight:400;color:var(--muted)}
+.brand-mark,.login-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--green);color:white;font-family:var(--serif);font-size:21px}
+.topbar-caption,.eyebrow{font-size:10px;letter-spacing:1.8px;font-weight:700;color:var(--muted)}
+.store-link{font-size:12px;font-weight:600}
+.main{width:min(1120px,calc(100% - 48px));margin:55px auto 90px}
+h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.6px}
+h1{font-size:42px;margin:6px 0}
+h2{font-size:29px;margin:5px 0}
+.muted{color:var(--muted);font-size:13px}
+.login-card{width:min(100%,430px);margin:65px auto;padding:38px;background:var(--white);border:1px solid var(--line)}
+.login-mark{width:44px;height:44px;margin-bottom:23px;font-size:25px}
+.login-card h1{font-size:34px}
+.login-card form{display:grid;gap:15px;margin-top:24px}
+label{display:grid;gap:6px;color:var(--muted);font-size:11px}
+input,select,textarea{width:100%;min-height:43px;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:var(--white);color:var(--ink)}
+textarea{resize:vertical}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--green)}
+.button{min-height:43px;padding:0 17px;border:0;border-radius:3px;font-size:12px;font-weight:600}
+.primary{background:var(--green);color:white}
+.secondary{background:var(--white);border:1px solid var(--line)}
+.welcome{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.tabs{display:flex;gap:12px;margin:32px 0 23px;border-bottom:1px solid var(--line)}
+.tab{padding:13px 17px;border:0;border-bottom:2px solid transparent;background:none;color:var(--muted);font-size:12px}
+.tab.active{border-color:var(--green);color:var(--green);font-weight:700}
+.view-title{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:26px 0 18px}
+.view-title .eyebrow{margin:0}
+.editor{margin-bottom:22px;padding:22px;background:var(--white);border:1px solid var(--line)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wide{grid-column:1/-1}
+.check{display:flex;align-items:center;gap:8px;margin:15px 0}
+.check input{width:16px;min-height:16px}
+.actions{display:flex;gap:9px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--white);font-size:12px}
+th,td{padding:13px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-size:10px;font-weight:600}
+.row-actions{display:flex;gap:9px;align-items:center;white-space:nowrap}
+.row-actions button{padding:0;border:0;background:none;color:var(--green);font-size:11px;text-decoration:underline}
+.row-actions .danger{color:var(--red)}
+.rating{color:#9d7e27;white-space:nowrap}
+.empty{padding:24px;background:var(--white);color:var(--muted);font-size:12px}
+.notice{padding:13px 16px;margin:0 0 20px;border:1px solid #e9dfca;background:#f3e9d8;color:#65583d;font-size:12px}
+.notice.error{border-color:#edd0c7;background:#f8e8e3;color:var(--red)}
+.notice.success{border-color:#d4e1d0;background:#e7efe5;color:var(--green)}
+@media(max-width:680px){.topbar{height:62px;padding:0 17px}.topbar-caption{display:none}.main{width:calc(100% - 34px);margin:30px auto}.login-card{padding:25px;margin:26px auto}.welcome{align-items:flex-start}.welcome h1{font-size:34px}.welcome .button{padding:0 10px;font-size:10px}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.tabs{gap:0}.tab{flex:1;padding:12px 6px}}
